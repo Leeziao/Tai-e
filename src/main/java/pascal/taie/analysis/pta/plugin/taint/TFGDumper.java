@@ -45,7 +45,7 @@ import java.util.function.Function;
 /**
  * Taint flow graph dumper.
  */
-class TFGDumper extends DotDumper<Node> {
+public class TFGDumper extends DotDumper<Node> {
 
     private static final Logger logger = LogManager.getLogger(TFGDumper.class);
 
@@ -53,11 +53,11 @@ class TFGDumper extends DotDumper<Node> {
 
     private TaintFlowGraph tfg;
 
-    TFGDumper() {
+    public TFGDumper() {
         this(null);
     }
 
-    TFGDumper(@Nullable String highlightPath) {
+    public TFGDumper(@Nullable String highlightPath) {
         highlightNodes = Sets.newSet();
         try {
             if (highlightPath != null) {
@@ -69,7 +69,7 @@ class TFGDumper extends DotDumper<Node> {
         }
     }
 
-    void dump(TaintFlowGraph tfg, File output) {
+    public void dump(TaintFlowGraph tfg, File output) {
         logger.info("Dumping {}", output.getAbsolutePath());
         setNodeAttributer(this::nodeAttributer);
         setEdgeAttributer(this::edgeAttributer);

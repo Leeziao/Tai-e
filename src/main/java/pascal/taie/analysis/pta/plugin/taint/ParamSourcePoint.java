@@ -30,7 +30,7 @@ import java.util.Comparator;
 /**
  * A {@code ParamSourcePoint} is a parameter of a method.
  */
-record ParamSourcePoint(JMethod sourceMethod, IndexRef indexRef, ParamSource source)
+public record ParamSourcePoint(JMethod sourceMethod, IndexRef indexRef, ParamSource source)
         implements SourcePoint {
 
     private static final Comparator<ParamSourcePoint> COMPARATOR =

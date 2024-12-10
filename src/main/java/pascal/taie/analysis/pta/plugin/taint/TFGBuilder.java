@@ -54,7 +54,7 @@ import java.util.stream.Stream;
 /**
  * Taint flow graph builder.
  */
-class TFGBuilder {
+public class TFGBuilder {
 
     private static final Logger logger = LogManager.getLogger(TFGBuilder.class);
 
@@ -81,7 +81,7 @@ class TFGBuilder {
      */
     private Map<Node, Set<Obj>> node2TaintSet;
 
-    TFGBuilder(PointerAnalysisResult pta,
+    public TFGBuilder(PointerAnalysisResult pta,
                Set<TaintFlow> taintFlows,
                TaintManager taintManager) {
         this.pta = pta;
@@ -230,7 +230,7 @@ class TFGBuilder {
         }
     }
 
-    TaintFlowGraph build() {
+    public TaintFlowGraph build() {
         TaintFlowGraph complete = buildComplete();
         TaintFlowGraph tfg = new TaintFlowGraph(
                 complete.getSourceNode2SourcePoint(),

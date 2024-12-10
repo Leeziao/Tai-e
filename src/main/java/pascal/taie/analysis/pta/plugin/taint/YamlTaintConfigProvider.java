@@ -56,13 +56,13 @@ import java.util.stream.Stream;
 
 import static pascal.taie.analysis.pta.plugin.taint.IndexRef.ARRAY_SUFFIX;
 
-class YamlTaintConfigProvider extends TaintConfigProvider {
+public class YamlTaintConfigProvider extends TaintConfigProvider {
 
     private static final Logger logger = LogManager.getLogger(YamlTaintConfigProvider.class);
 
     private String path;
 
-    YamlTaintConfigProvider(ClassHierarchy hierarchy, TypeSystem typeSystem) {
+    public YamlTaintConfigProvider(ClassHierarchy hierarchy, TypeSystem typeSystem) {
         super(hierarchy, typeSystem);
     }
 
@@ -74,7 +74,7 @@ class YamlTaintConfigProvider extends TaintConfigProvider {
      *
      * @param path the path
      */
-    void setPath(String path) {
+    public void setPath(String path) {
         this.path = path;
     }
 
